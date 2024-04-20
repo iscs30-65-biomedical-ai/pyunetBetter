@@ -55,6 +55,7 @@ model_type_choices = [
     "unet_depth",
     "unet_attn_depth",
     "unet_attn_dp_depth"
+    "unet_attn_se" # Adding squeeze-and-excitation (SE) blocks to a U-Net with attention
 ]
 
 default_dataset_name = (datetime.datetime.now()).strftime("%Y%m%d%H%M%S")

@@ -9,6 +9,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from lib.unet import UNet
 from lib.unet_attn import UNetAttn
 from lib.unet_attn_dp import UNetAttnDp
+from lib.unet_attn_se import UNetAttnSE
 from lib.unet_attn_ghost import UNetAttnGhost
 from lib.unet_attn_inverted_residual_block import UNetAttnInvertedResidualBlock
 from lib.unet_attn_stacked_ghost_irb import UNetAttnStackedGhostIrb
@@ -75,6 +76,11 @@ def initialize_model(in_channels, out_channels, model_type, device):
         )
     elif model_type == 'unet_attn_stacked_ghost_irb':
         model = UNetAttnStackedGhostIrb(
+            in_channels=in_channels,
+            out_channels=out_channels
+        )
+    elif model_type == 'unet_attn_se':
+        model = UNetAttnSE(
             in_channels=in_channels,
             out_channels=out_channels
         )
